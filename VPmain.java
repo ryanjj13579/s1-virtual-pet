@@ -12,6 +12,34 @@ public class VPMain {
             vp.sleep();
         else
             vp.exercise();
+        String ans1 = this.askForInput("Are you ready to wait for changing diaper?");
+        if(ans1.equals("yes"))
+            vp.changeDiaper();
+        else
+            vp.poop();
+        vp.feed();
+        String ans2 = this.askForInput("Do you want to keep watching TV or go to sleep");
+        if(ans2.equals("yes"))
+            vp.keepWatchingTV();
+        else
+            vp.sleep();
+        String ans3 = this.askForInput("Somebody is trying to steal your toy. Do you fight?");
+        if(ans3.equals("yes"))
+            vp.fight();
+        else
+            vp.flight();
+        String ans4 = this.askForInput("You got no money to buy a PC. Do you steal or work a job");
+        if(ans4.equals("yes"))
+            vp.steal();
+        else
+            vp.work(); 
+        String ans5 = this.askForInput("You're a teenager and you're not happy. Do you play video games or do homework?");
+        if(ans5.equals("yes"))
+            vp.playVideoGames();
+        else
+            vp.doHomework();
+        
+
     }
 
     public void waitABeat(int ms){
@@ -34,10 +62,6 @@ public class VPMain {
 
     public static void main(String[] args) {
         new VPMain();    
-    }
-
-    public void wonTheLottery(){
-        
     }
 }
 

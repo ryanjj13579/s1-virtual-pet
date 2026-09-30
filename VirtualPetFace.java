@@ -32,6 +32,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.Timer;
 import javax.swing.border.Border;
+import javax.swing.event.SwingPropertyChangeSupport;
 
 
 public class VirtualPetFace extends JFrame implements ActionListener{
@@ -46,6 +47,7 @@ public class VirtualPetFace extends JFrame implements ActionListener{
     private Image[] allPics;
     private ArrayList<Image> pics;
     private Timer timer;
+    private int Clean;
     
 
     private static final String imageBase = "pet_images/";
@@ -221,6 +223,8 @@ public class VirtualPetFace extends JFrame implements ActionListener{
         public boolean isBorderOpaque() {
             return true;
         }
+
+        
     }
 }
 
