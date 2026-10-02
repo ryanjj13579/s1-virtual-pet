@@ -113,7 +113,22 @@ public class VirtualPet {
         hunger = hunger - 15;
         if(hunger < 50){
             face.setImage("Gaming");
-        } if ()
+        } if (hunger > 50){
+            face.setImage("Sad");
+            hunger = hunger + 15;
+        }
+
+    public void doHomework(){
+        hunger = hunger + 25;
+        if(hunger < 50){
+            face.setImage("Doing homework well");
+            hunger = hunger - 30;
+        } if (hunger  > 50){
+            face.setImage("angry");
+            hunger = hunger + 10
+        }
+    }
+
     }
 } // end Virtual Pet
 
