@@ -4,9 +4,13 @@ public class VPMain {
     VirtualPet vp = new VirtualPet();
     
     public VPMain(){
-        vp.feed();
-        vp.exercise();
-        this.waitABeat(1000);
+        String ans6 = this.askForInput("Are you ready to be fed?");
+        if(ans6.equals("yes"))
+            vp.feed();
+        String ans7 = this.askForInput("Are your ready to exercise?");
+        if(ans7.equals("yes"))
+            vp.exercise();
+        //this.waitABeat(1000);
         String ans = this.askForInput("Are you ready to sleep?");
         if(ans.equals("yes"))
             vp.sleep();

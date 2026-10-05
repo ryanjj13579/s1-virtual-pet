@@ -12,8 +12,8 @@ public class VirtualPet {
     // constructor
     public VirtualPet() {
         face = new VirtualPetFace();
-        face.setImage("normal");
-        face.setMessage("Hello.");
+        face.setImage("born_1");
+        face.setMessage("I'm born!");
     }
     
     public void feed() {
@@ -23,26 +23,27 @@ public class VirtualPet {
             hunger = 0;
         }
         face.setMessage("Yum, thanks");
-        face.setImage("normal");
+        face.setImage("joyful_2");
     }
     
     public void exercise() {
         hunger = hunger + 3;
         face.setMessage("1, 2, 3, jump.  Whew.");
-        face.setImage("tired");
+        face.setImage("tired_1");
     }
     
     public void sleep() {
         hunger = hunger + 1;
+        face.setMessage("Zzz");
         face.setImage("asleep");
     }
 
     public void changeDiaper(){
         hunger = hunger - 30;
         if (hunger < 25)
-            face.setImage("Joyful");
+            face.setImage("joyful_3");
             if (hunger < 50){
-            face.setImage("happy");
+            face.setImage("happy_1");
             }else{
                     face.setImage("Sad");
                 }
@@ -91,7 +92,7 @@ public class VirtualPet {
             face.setImage("Heist");
         } else {
             hunger += 30;
-            face.setImage("Caught");
+            face.setImage("caught_1");
         }
     }
 
@@ -101,7 +102,7 @@ public class VirtualPet {
             face.setImage("Working");
         } if (hunger < 75){
             hunger += 15;
-            face.setImage("Tired");
+            face.setImage("tired_1");
             if (hunger > 75 && hunger < 100){
                 hunger += 30;
                 face.setImage("Cooked");
@@ -117,6 +118,7 @@ public class VirtualPet {
             face.setImage("Sad");
             hunger = hunger + 15;
         }
+    }
 
     public void doHomework(){
         hunger = hunger + 25;
@@ -125,10 +127,8 @@ public class VirtualPet {
             hunger = hunger - 30;
         } if (hunger  > 50){
             face.setImage("angry");
-            hunger = hunger + 10
+            hunger = hunger + 10;
         }
-    }
-
     }
 } // end Virtual Pet
 
