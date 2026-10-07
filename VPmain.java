@@ -14,12 +14,8 @@ public class VPMain {
         if(ans.equals("yes"))
             vp.sleep();
         else
-            vp.poop();
-        String ans2 = this.askForInput("Do you want to keep watching TV or go to sleep");
-        if(ans2.equals("yes"))
             vp.keepWatchingTV();
-        else
-            vp.sleep();
+       
         String ans3 = this.askForInput("Somebody is trying to steal your toy. Do you fight?");
         if(ans3.equals("yes"))
             vp.fight();
@@ -33,6 +29,7 @@ public class VPMain {
         String ans5 = this.askForInput("You're a teenager and you're not happy. Do you play video games or do homework?");
         if(ans5.equals("yes"))
             vp.playVideoGames();
+    
         else
             vp.doHomework();
         

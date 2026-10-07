@@ -7,7 +7,8 @@ public class VirtualPet {
     
     VirtualPetFace face;
     int hunger = 0;   // how pet morale
-   
+    int Pcf = 20;
+    boolean trouble = false;
     
     // constructor
     public VirtualPet() {
@@ -41,22 +42,20 @@ public class VirtualPet {
     }
 
     public void poop(){
-    
+        trouble = true;
         face.setImage("poop");
         face.setMessage("Good Job");
     }
 
     public void keepWatchingTV(){
-        hunger = hunger - 5;
-        if (hunger < 50){
-            face.setImage("watchingTV");
-        } else{
-            face.setImage("crying_1");
-        }
+        face.setImage("watchingTV");
+        face.setMessage("good choice");
+        
     }
 
     public void fight(){
         hunger = hunger + 0;
+        Pcf = Pcf + 50;
         if (hunger < 50){
             face.setImage("fight");
             face.setMessage("I beat him up");
@@ -67,7 +66,7 @@ public class VirtualPet {
     }
 
     public void flight(){
-        this.hunger = hunger + 20;
+        this.hunger = this.hunger - 1000;
         if (hunger < 50){
             face.setImage("running");
         } else {
@@ -88,14 +87,17 @@ public class VirtualPet {
 
     public void work(){
         hunger = hunger - 10;
-        if(hunger < 50){
-            face.setImage("Working_1");
+        if(this.hunger < 50){
+            face.setImage("Working");
+            face.setMessage("I'm doing my shift");
         } if (hunger < 75){
             hunger += 15;
             face.setImage("tired_3");
+            face.setMessage("I'm too tired man.");
             if (hunger > 75 && hunger < 100){
                 hunger += 30;
                 face.setImage("crying_1");
+                face.setMessage("its too hard");
             }
         }
     }
@@ -104,6 +106,7 @@ public class VirtualPet {
         hunger = hunger - 15;
         if(hunger < 50){
             face.setImage("Gaming");
+            face.setMessage("Good choice");
         } if (hunger > 50){
             face.setImage("crying_1");
             hunger = hunger + 15;
@@ -112,10 +115,10 @@ public class VirtualPet {
 
     public void doHomework(){
         hunger = hunger + 25;
-        if(hunger < 50){
+        if(hunger < Pcf || trouble == true){
             face.setImage("Doing homework well");
             hunger = hunger - 30;
-        } if (hunger  > 50){
+        }if (hunger  > 50){
             face.setImage("angry");
             hunger = hunger + 10;
         }
