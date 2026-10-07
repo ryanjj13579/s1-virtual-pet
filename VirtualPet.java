@@ -23,30 +23,33 @@ public class VirtualPet {
     }
 
     public void changeDiaper(){
-        hunger = hunger - 30;
-        if (hunger < 25)
-            face.setImage("");
-            face.setMessage("");
-            if (hunger < 50){
-            face.setImage("");
-            }else{
-                    face.setImage("crying_1");
-                }
+        if(hunger<30){
+            //System.out.println("asdfsad");
+
         }
+        face.setImage("");
+    
+        // hunger = hunger - 30;
+    // if (hunger < 25)
+    //     face.setImage("");
+    //     face.setMessage("");
+    //     if (hunger < 50){
+    //     face.setImage("");
+    //     }else{
+    //             face.setImage("crying_1");
+    //         }
+    }
 
     public void poop(){
-        hunger = hunger + 25;
-        if (hunger < 50){
-            face.setImage("poop_2");
-        } else {
-            face.setImage("poop_1");
-        }
+    
+        face.setImage("poop");
+        face.setMessage("Good Job");
     }
 
     public void keepWatchingTV(){
         hunger = hunger - 5;
         if (hunger < 50){
-            face.setImage("watchingTV_1");
+            face.setImage("watchingTV");
         } else{
             face.setImage("crying_1");
         }
@@ -56,18 +59,20 @@ public class VirtualPet {
         hunger = hunger + 0;
         if (hunger < 50){
             face.setImage("fight");
+            face.setMessage("I beat him up");
         } else{
-            face.setImage("Hurt");
+            face.setImage("fight");
+            face.setMessage("I got beat up");
         }
     }
 
     public void flight(){
         this.hunger = hunger + 20;
         if (hunger < 50){
-            face.setImage("Running");
+            face.setImage("running");
         } else {
             hunger +=20;
-            face.setImage("Hurt");
+            face.setImage("crying_1");
         }
     }
 
@@ -77,7 +82,7 @@ public class VirtualPet {
             face.setImage("Heist");
         } else {
             hunger += 30;
-            face.setImage("caught_1");
+            face.setImage("caught");
         }
     }
 
@@ -87,7 +92,7 @@ public class VirtualPet {
             face.setImage("Working_1");
         } if (hunger < 75){
             hunger += 15;
-            face.setImage("tired_1");
+            face.setImage("tired_3");
             if (hunger > 75 && hunger < 100){
                 hunger += 30;
                 face.setImage("crying_1");
