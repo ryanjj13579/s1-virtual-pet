@@ -4,24 +4,17 @@ public class VPMain {
     VirtualPet vp = new VirtualPet();
     
     public VPMain(){
-        String ans6 = this.askForInput("Are you ready to be fed?");
-        if(ans6.equals("yes"))
-            vp.feed();
-        String ans7 = this.askForInput("Are your ready to exercise?");
-        if(ans7.equals("yes"))
-            vp.exercise();
         //this.waitABeat(1000);
-        String ans = this.askForInput("Are you ready to sleep?");
-        if(ans.equals("yes"))
-            vp.sleep();
-        else
-            vp.exercise();
         String ans1 = this.askForInput("Are you ready to wait for changing diaper?");
         if(ans1.equals("yes"))
             vp.changeDiaper();
         else
             vp.poop();
-        vp.feed();
+        String ans = this.askForInput("Are you ready to sleep?");
+        if(ans.equals("yes"))
+            vp.sleep();
+        else
+            vp.poop();
         String ans2 = this.askForInput("Do you want to keep watching TV or go to sleep");
         if(ans2.equals("yes"))
             vp.keepWatchingTV();
